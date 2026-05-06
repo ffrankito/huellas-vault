@@ -40,7 +40,11 @@ cloud "Resend" {
 }
 
 cloud "Anthropic" {
-  component "Claude claude-sonnet-4-6\n(asistente interno)" as claude
+  component "Claude\n(asistente interno)" as claude
+}
+
+cloud "Jaque Mate" {
+  component "Sistema contable\n(facturación, planes)" as jaqueMate
 }
 
 actor "Staff (CRM)" as staff
@@ -62,6 +66,8 @@ crm --> claude : Anthropic SDK
 
 landing --> crm : POST /api/leads\n(lead capture form)
 cotizador --> crm : POST /api/leads\n(CORS)
+
+crm ..> jaqueMate : exportación mensual\n(CSV/Excel — manual)
 
 note bottom of pg
   DATABASE_URL (pooled)

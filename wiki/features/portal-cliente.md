@@ -8,6 +8,8 @@ updated: 2026-05-04
 
 # Portal Cliente
 
+**Diagram:** [[wiki/architecture/plantuml/05-seq-portal-cliente]]
+
 Self-service portal for pet owners. Accessible at `/portal/[tokenPortal]`. No login required — the token in the URL is the primary auth mechanism. See [[wiki/decisions/2026-04-portal-auth-dual-mechanism]].
 
 ## Access

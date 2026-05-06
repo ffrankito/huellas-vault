@@ -3,18 +3,49 @@ title: Arquitectura — índice de diagramas
 type: architecture
 status: active
 tags: [architecture, plantuml]
-updated: 2026-05-04
+updated: 2026-05-06
 ---
 
 # Arquitectura — índice de diagramas
 
 Todos los diagramas usan PlantUML (plugin `obsidian-plantuml` v1.8.1).
 
-| Diagrama | Archivo | Descripción |
-| --- | --- | --- |
-| Actores | [[wiki/architecture/plantuml/01-actores]] | Roles internos, externos y sistemas |
-| Casos de uso | [[wiki/architecture/plantuml/02-casos-de-uso]] | Qué puede hacer cada actor |
-| Clases de dominio | [[wiki/architecture/plantuml/03-clases-dominio]] | Entidades y relaciones del DB |
-| Estados | [[wiki/architecture/plantuml/04-estados]] | Ciclos de vida: servicio, lead, plan, MFA |
-| Secuencias | [[wiki/architecture/plantuml/05-secuencias]] | Login 2FA, conversión lead, portal, servicio |
-| Deployment | [[wiki/architecture/plantuml/06-deployment]] | Apps, infra, conexiones y costos |
+For domain context alongside these diagrams, see [[wiki/domain/modelo-dominio]].
+
+## Actores y casos de uso
+
+| Diagrama | Archivo |
+|---|---|
+| Actores | [[01-actores]] |
+| Casos de uso | [[02-casos-de-uso]] |
+
+## Dominio — Clases
+
+| Diagrama | Archivo |
+|---|---|
+| Clases de dominio | [[03-clases-dominio]] |
+
+## Estados
+
+| Diagrama | Archivo |
+|---|---|
+| Estado — Servicio | [[04-estado-servicio]] |
+| Estado — Lead | [[04-estado-lead]] |
+| Estado — Plan de previsión | [[04-estado-plan]] |
+| Estado — Sesión MFA | [[04-estado-mfa]] |
+
+## Secuencias
+
+| Diagrama | Archivo |
+|---|---|
+| Login CRM con 2FA | [[05-seq-login-2fa]] |
+| Conversión de Lead a Cliente | [[05-seq-convertir-lead]] |
+| Acceso al Portal Cliente | [[05-seq-portal-cliente]] |
+| Ciclo de vida de un Servicio | [[05-seq-ciclo-servicio]] |
+| Portal B2B — Ingreso de Lead por Convenio | [[05-seq-portal-b2b]] |
+
+## Deployment
+
+| Diagrama | Archivo |
+|---|---|
+| Deployment — infra, conexiones, costos | [[06-deployment]] |

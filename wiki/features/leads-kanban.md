@@ -8,6 +8,8 @@ updated: 2026-05-04
 
 # Leads — Kanban y Gestión
 
+**Diagrams:** [[wiki/architecture/plantuml/04-estado-lead]] · [[wiki/architecture/plantuml/05-seq-convertir-lead]]
+
 Lead pipeline from capture to conversion. Agents work from `/dashboard/mis-leads` (one lead at a time queue) while admins/managers see the full kanban at `/dashboard/leads`.
 
 ## States
@@ -44,6 +46,14 @@ One lead at a time. Features:
 - Programar seguimiento — lead disappears from queue until `seguimientoEn` is reached.
 - Mandatory report before moving to next lead.
 - Conversion modal → creates Cliente + Mascota + Plan or Servicio.
+
+## Lead assignment
+
+New leads are automatically assigned to the `televenta` agent with the lowest current load at creation time. Goal is fast response, not strict equality.
+
+- Transfer between agents requires a mandatory reason, recorded in `lead_interacciones`
+- Manual reassignment is admin/manager only
+- B2B leads (`origen: 'veterinaria'`) arrive pre-flagged as high priority and appear first in the agent queue
 
 ## Bulk import
 

@@ -8,6 +8,8 @@ updated: 2026-05-04
 
 # 2FA — Email OTP
 
+**Diagrams:** [[wiki/architecture/plantuml/04-estado-mfa]] · [[wiki/architecture/plantuml/05-seq-login-2fa]]
+
 Opt-in two-factor authentication for CRM staff. Each user activates it individually from `/dashboard/perfil`. Uses emailed 6-digit OTP codes, not a TOTP app.
 
 ## Design decision
