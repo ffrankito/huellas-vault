@@ -3,7 +3,7 @@ title: Clases de dominio
 type: architecture
 status: active
 tags: [architecture, plantuml, clases]
-updated: 2026-05-04
+updated: 2026-05-15
 ---
 
 # Clases de dominio
@@ -72,7 +72,9 @@ class Servicio {
   +fechaEntrega: timestamp?
   +modalidadRetiro: text?
   +convenioId: uuid?
+  +servicioConfigId: uuid?
   +inventarioItemId: uuid?
+  +pagado: boolean
   +notas: text?
 }
 
@@ -96,14 +98,16 @@ class Lead {
   +nombre: text
   +telefono: text
   +email: text?
+  +dni: text?
   +origen: OrigenLead
   +estado: EstadoLead
-  +interes: text?
-  +servicioBuscado: text?
   +pickupMethod: text?
   +agenteId: uuid?
   +convenioId: uuid?
   +notas: text?
+  +primerRespuestaEn: timestamp?
+  +ultimaInteraccionEn: timestamp?
+  +seguimientoEn: timestamp?
   +creadoEn: timestamp
 }
 

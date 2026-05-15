@@ -3,7 +3,7 @@ title: Vercel
 type: integration
 status: active
 tags: [integrations, vercel, hosting, cron]
-updated: 2026-05-04
+updated: 2026-05-15
 ---
 
 # Vercel
@@ -33,4 +33,16 @@ Set per-project in the Vercel dashboard. The CRM has the largest set — see `CL
 
 ## Deployment
 
-Auto-deploy on push to `main`. Each app in the monorepo is a separate Vercel project with its own root directory setting.
+Auto-deploy on push to `main` only. Each app in the monorepo is a separate Vercel project with its own root directory setting.
+
+All four `vercel.json` files include `"git": { "deploymentEnabled": false }`, which disables auto-deploys on every branch except the production branch configured in the Vercel dashboard (currently `main`). Pushes to `dev` or feature branches do **not** trigger builds — only a PR merge to `main` does.
+
+### Branch strategy
+
+| Branch | Purpose | Deploys? |
+|--------|---------|----------|
+| `main` | Production | Yes — all 4 projects |
+| `dev` | Integration / staging | No |
+| Feature branches | In-progress work | No |
+
+PRs go `feature → dev` for review, then `dev → main` to ship.
